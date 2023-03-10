@@ -68,10 +68,9 @@ public class Student{
 		return this.total;
 		
 	}
-
+	// function to find the average mark
 	public double getAverage(){
-
-		
+		average = Helper.getArrayAverage(marks);
 	}
 
 
