@@ -1,5 +1,7 @@
 package sms.student;
 
+import sms.util.Helper;
+
 public class Student{
 
 	private int registerNumber;
@@ -14,6 +16,17 @@ public class Student{
 	static{
 
 		PASS_MARK = 50;
+	}
+
+
+	public Student(){
+		
+	}
+
+	public Student(int registerNumber,String studentName,int marks[]){
+		this.registerNumber = registerNumber;
+		this.studentName = studentName;
+		this.marks = marks;
 	}
 
 
@@ -37,7 +50,7 @@ public class Student{
 
 	public int[] getMarks(){
 
-		return this.marks[];
+		return this.marks;
 	}
 	public void setRegisterNumber(int[] marks){
 
@@ -71,6 +84,20 @@ public class Student{
 	// function to find the average mark
 	public double getAverage(){
 		average = Helper.getArrayAverage(marks);
+		return average;
+	}
+
+		public void readStudent(){
+
+		System.out.print("Enter the Register Number :");
+		registerNumber = Helper.getI();
+		System.out.print("Enter the Name :");
+		studentName = Helper.getS();
+		for(int i=0;i<marks.length;i++){
+			System.out.println("Enter Subject " + (i+1) + " mark :");
+			marks[i] = Helper.getMark();
+		}
+		
 	}
 
 
