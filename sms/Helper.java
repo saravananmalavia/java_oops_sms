@@ -1,6 +1,7 @@
 package sms.util;
 
 import java.util.*;
+import sms.exception.*;
 
 public class Helper{
 
@@ -47,12 +48,40 @@ public class Helper{
 		return val;
 	}
 
+	public  static int getMark(){
+		int mark = 0;
+		boolean corectMark = false;
+
+		do{
+			try{
+				mark = getI();
+				if(mark<0 || mark >100){
+					throw new MOBException();
+				}
+				corectMark = true;
+
+			}
+			catch(MOBException e){
+				System.out.println("ente the valid mark");
+			}
+		}while(corectMark != true);
+		
+		return mark;
+	}
+
+	
+	public static void sop(String message){
+
+		System.out.println(message);
+
+	}
+
 
 	public static void main(String args[])
        {
 
-		System.out.print("Enter the Register Number :");
-       	int i  = Helper.getI();
+		System.out.print("Enter the Mark :");
+       	int i  = Helper.getMark();
        	System.out.println(i);
 
        }

@@ -87,13 +87,15 @@ public class Student{
 		return average;
 	}
 
-		public void readStudent(){
+	public void readStudent(){
 
 		System.out.print("Enter the Register Number :");
 		registerNumber = Helper.getI();
+
 		System.out.print("Enter the Name :");
 		studentName = Helper.getS();
-		for(int i=0;i<marks.length;i++){
+
+		for(int i=0; i<marks.length; i++){
 			System.out.println("Enter Subject " + (i+1) + " mark :");
 			marks[i] = Helper.getMark();
 		}
