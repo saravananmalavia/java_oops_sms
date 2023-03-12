@@ -1,8 +1,9 @@
 package sms.student;
 
 import sms.util.Helper;
+import java.io.Serializable;
 
-public class Student{
+public class Student implements Serializable{
 
 	private int registerNumber;
 	private String studentName;
@@ -100,6 +101,42 @@ public class Student{
 			marks[i] = Helper.getMark();
 		}
 		
+	}
+
+
+	public void findResult(){
+
+		result = "PASS";
+		total = 0;
+		for(int i=0;i<marks.length;i++){
+			if(marks[i] < PASS_MARK ){
+				result = "FAIL";
+
+			}	
+			total += marks[i];
+			//total = total + marks[i];
+		}
+		average = Helper.getArrayAverage(marks);
+	}
+
+	// function to display the student details in the console
+	
+	public void displayStudent(){
+		//this.findResult();
+
+		System.out.println("Register Number :" + this.registerNumber);
+		System.out.println("Student Name :" + this.studentName);
+
+		for(int i=0;i<marks.length;i++){
+			System.out.println("Subject " + (i+1) + " mark :" + marks[i]);	
+		}
+
+		System.out.println("Total :" + getTotal());
+		System.out.println("Result :" + getResult());
+		System.out.println("Average :" + getAverage());
+		System.out.println("PASS_MARK :" + PASS_MARK);
+		System.out.println("***********************************");
+
 	}
 
 
